@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Username Submission</title>
+    <title>Discord Submission Website</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Discord Username Submission</h1>
+        <h1>Discord Submission Website</h1>
         <form id="submissionForm">
             <label for="username">Discord Username:</label>
             <input type="text" id="username" name="username" required>
             
             <label for="reason">Reason for Submission:</label>
-            <textarea id="reason" name="reason" required></textarea>
+            <input type="text" id="reason" name="reason" required>
             
             <button type="submit">Submit</button>
         </form>
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Submitted usernames and reasons will be displayed here -->
+                <!-- Submissions will be added here -->
             </tbody>
         </table>
     </div>

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('submission-form');
+    const form = document.getElementById('submissionForm');
     const scoreboard = document.getElementById('scoreboard');
 
     form.addEventListener('submit', (event) => {
@@ -9,17 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const reason = document.getElementById('reason').value;
 
         if (username && reason) {
-            addEntryToScoreboard(username, reason);
+            const table = scoreboard.getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            const usernameCell = newRow.insertCell(0);
+            const reasonCell = newRow.insertCell(1);
+
+            usernameCell.textContent = username;
+            reasonCell.textContent = reason;
+
             form.reset();
         } else {
             alert('Please fill in both fields.');
         }
     });
-
-    function addEntryToScoreboard(username, reason) {
-        const entry = document.createElement('div');
-        entry.classList.add('scoreboard-entry');
-        entry.innerHTML = `<strong>${username}</strong>: ${reason}`;
-        scoreboard.appendChild(entry);
-    }
 });
